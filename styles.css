@@ -19,5 +19,15 @@
 
 body{
     font-family: 'Space Mono', monospace;
+    background-color: var(--light-grayish-cyan);
 }
 
+
+.attribution { 
+    font-size: 12px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
