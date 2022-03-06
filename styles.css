@@ -22,23 +22,17 @@ body{
     background-color: var(--light-grayish-cyan);
 }
 
-
-.attribution { 
-    font-size: 12px; 
-    text-align: center; 
-}
-
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
-}
-
 .main-box{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1.75fr 1.75fr;
+    grid-gap: 1.5rem;
     position: absolute;
     top : 50%;
     left : 50%;
     transform: translate(-50%,-50%);
+    background-color: var(--white);
+    padding : 1.5rem;
+    border-radius: 10px;
 }
 
 .tip-percentage{
@@ -96,10 +90,68 @@ body{
 .right-div{
     background-color: var(--very-dark-cyan);
     color : var(--white);
+    position: relative;
+    border-radius : 8px;
+    font-weight: 700;
+}
+
+.right-1-div,.right-2-div{
+    width : 85%;
+    padding : .4rem .2rem;
+    position: absolute;
+    transform: translateX(-50%);
+    left : 50%;
+    top : 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .right-div a{
     text-decoration: none;
     color : var(--very-dark-cyan);
     background-color: rgba(4, 104, 109, 0.815);
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    bottom : 25px;
+    left : 50%;
+    transform : translateX(-50%);
+    width : 85%;
+    padding : .35rem .2rem;
 }
+
+
+.right-2-div{
+    top : 30%;
+}
+
+.SubR1,.SubR2{
+    font-size: .9rem;
+}
+
+.subr1,.subr2{
+    font-size: .6rem;
+    margin-top: .2rem;
+    color : var(--dark-grayish-cyan);
+}
+
+.price{
+    font-size: 2rem;
+    color : var(--strong-cyan);
+}
+
+
+/* .attribution { 
+    font-size: 12px; 
+    text-align: center; 
+    bottom: 10px;
+    position: absolute;
+    width : 100vw;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+} */
