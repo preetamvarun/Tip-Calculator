@@ -1,0 +1,1 @@
+const billAmount = document.getElementById("billIcon");
