@@ -31,3 +31,41 @@ body{
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+.main-box{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+}
+
+.percentages{
+    display: grid;
+    grid-template-columns: repeat(3,.5fr);
+    grid-gap: .4rem;
+}
+
+.percentages span{
+    display: inline-block;
+    padding : 0.4rem 0rem;
+    background-color: var(--very-dark-cyan);
+    border-radius : 5px;
+    outline: none;
+    text-align: center;
+}
+
+.percentages input{
+    padding : 0.4rem 0rem;
+    width : 100%;
+}
+
+#people label{
+    display: block;
+}
+
+.right-div{
+    background-color: var(--very-dark-cyan);
+    color : var(--white);
+}
