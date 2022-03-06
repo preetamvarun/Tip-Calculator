@@ -16,10 +16,24 @@
     --font-weight : 700;
 }
 
-
 body{
     font-family: 'Space Mono', monospace;
     background-color: var(--light-grayish-cyan);
+}
+
+.splitter{
+    text-align: center;
+    padding : 1rem;
+    position: absolute;
+    width : 100vw;
+    top : 12%;
+    color : var(--dark-grayish-cyan);
+    font-weight: var(--font-weight);
+    letter-spacing: 8px;
+}
+
+.splitter span{
+    display: block;
 }
 
 .main-box{
@@ -29,7 +43,7 @@ body{
     position: absolute;
     top : 50%;
     left : 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-45%);
     background-color: var(--white);
     padding : 1.5rem;
     border-radius: 10px;
@@ -67,6 +81,7 @@ body{
     padding : 0.4rem 0rem;
     width : 100%;
     outline: none;
+    border : 1px solid var(--grayish-cyan);
 }
 
 .percentages input::placeholder{
@@ -152,6 +167,37 @@ body{
     color : var(--strong-cyan);
 }
 
+#billIcon,#peopleIcon{
+    outline : none;
+    width : 95%;
+    padding : .4rem;
+    position: relative;
+    border : 1px solid var(--light-grayish-cyan);   
+}
+
+#billIcon{
+    background: url('./images/icon-dollar.svg') no-repeat;
+    background-position-x: 5px;
+    background-position-y: 5px;
+    background-size : 9px;
+    background-color: var(--light-grayish-cyan);
+}
+
+#peopleIcon{
+    background: url('./images/icon-person.svg') no-repeat;
+    background-position-x: 7px;
+    background-position-y: 7px;
+    background-size : 11.5px;
+    background-color: var(--light-grayish-cyan);
+}
+
+.icon::placeholder{
+    color : var(--dark-grayish-cyan);
+    position: absolute;
+    right : 8px;
+    bottom : 2px;
+    font-size : 1.1rem;
+}
 
 .attribution { 
     font-size: 12px; 
