@@ -41,9 +41,20 @@ body{
     transform: translate(-50%,-50%);
 }
 
+.tip-percentage{
+    margin : 1rem 1rem 1rem 0rem;
+}
+
+#select-tip{
+ margin-bottom : .5rem;
+ display: inline-block;
+ color : var(--dark-grayish-cyan);
+ font-weight: 700;
+}
+
 .percentages{
     display: grid;
-    grid-template-columns: repeat(3,.5fr);
+    grid-template-columns: repeat(3,.6fr);
     grid-gap: .4rem;
 }
 
@@ -54,18 +65,41 @@ body{
     border-radius : 5px;
     outline: none;
     text-align: center;
+    color : var(--white);
 }
 
 .percentages input{
     padding : 0.4rem 0rem;
     width : 100%;
+    outline: none;
 }
 
-#people label{
+.percentages input::placeholder{
+    font-weight: 700;
+    color : var(--grayish-cyan);
+    text-align: center;
+}
+
+#people label, #bill label{
     display: block;
+    color : var(--dark-grayish-cyan);
+    font-weight: 700;
+    margin-bottom: .45rem;
+}
+
+#people input, #bill input{
+    width : 100%;
+    padding : .4rem;
+    width : 95%;
 }
 
 .right-div{
     background-color: var(--very-dark-cyan);
     color : var(--white);
+}
+
+.right-div a{
+    text-decoration: none;
+    color : var(--very-dark-cyan);
+    background-color: rgba(4, 104, 109, 0.815);
 }
