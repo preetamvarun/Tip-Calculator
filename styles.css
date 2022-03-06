@@ -144,10 +144,11 @@ body{
 
 .icon::placeholder{
     color : var(--dark-grayish-cyan);
+    font-weight: 700;
     position: absolute;
     right : 8px;
     bottom : 4px;
-    font-size : 1.1rem;
+    font-size : 1.2rem;
 }
 
 .logo{
