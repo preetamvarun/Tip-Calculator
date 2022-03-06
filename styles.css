@@ -75,13 +75,21 @@ body{
     outline: none;
     text-align: center;
     color : var(--white);
+    transition: all 0.5s ease;
+}
+
+.percentages span:hover{
+    cursor: pointer;
+    background-color: var(--strong-cyan);
+    color : #191919;
 }
 
 .percentages input{
     padding : 0.4rem 0rem;
     width : 100%;
     outline: none;
-    border : 1px solid var(--grayish-cyan);
+    border : 0px solid;
+    background-color: var(--very-light-grayish-cyan);
 }
 
 .percentages input::placeholder{
@@ -90,12 +98,56 @@ body{
     text-align: center;
 }
 
+.percentages input:focus{
+    border : 1.5px solid var(--strong-cyan);
+}
+
 #people label, #bill label{
     display: block;
     color : var(--dark-grayish-cyan);
     font-weight: 700;
     margin-bottom: .45rem;
     font-size: .8rem;
+}
+
+#billIcon,#peopleIcon{
+    outline : none;
+    width : 95%;
+    padding : .5rem;
+    position: relative;
+    border : 0px solid;   
+}
+
+#billIcon:hover,#peopleIcon:hover{
+    cursor: pointer;
+}
+
+#billIcon:focus,#peopleIcon:focus{
+    border : 1.5px solid var(--strong-cyan);
+}
+
+#billIcon{
+    background: url('./images/icon-dollar.svg') no-repeat;
+    background-position-x: 5px;
+    background-position-y: 8px;
+    background-size : 9px;
+    background-color: var(--light-grayish-cyan);
+}
+
+#peopleIcon{
+    background: url('./images/icon-person.svg') no-repeat;
+    background-position-x: 7px;
+    background-position-y: 10px;
+    background-size : 10px;
+    background-color: var(--light-grayish-cyan);
+}
+
+.icon::placeholder{
+    color : var(--dark-grayish-cyan);
+    position: absolute;
+    right : 8px;
+    bottom : 4px;
+    font-size : 1.1rem;
 }
 
 .logo{
@@ -109,7 +161,6 @@ body{
     align-items: center;
     color : var(--grayish-cyan);
 }
-
 
 .right-div{
     background-color: var(--very-dark-cyan);
@@ -144,9 +195,13 @@ body{
     left : 50%;
     transform : translateX(-50%);
     width : 85%;
-    padding : .35rem .2rem;
+    padding : .3rem .2rem;
+    transition : all .5s ease;
 }
 
+.right-div a:hover{
+    background-color: var(--strong-cyan);
+}
 
 .right-2-div{
     top : 30%;
@@ -167,37 +222,6 @@ body{
     color : var(--strong-cyan);
 }
 
-#billIcon,#peopleIcon{
-    outline : none;
-    width : 95%;
-    padding : .4rem;
-    position: relative;
-    border : 1px solid var(--light-grayish-cyan);   
-}
-
-#billIcon{
-    background: url('./images/icon-dollar.svg') no-repeat;
-    background-position-x: 5px;
-    background-position-y: 5px;
-    background-size : 9px;
-    background-color: var(--light-grayish-cyan);
-}
-
-#peopleIcon{
-    background: url('./images/icon-person.svg') no-repeat;
-    background-position-x: 7px;
-    background-position-y: 7px;
-    background-size : 11.5px;
-    background-color: var(--light-grayish-cyan);
-}
-
-.icon::placeholder{
-    color : var(--dark-grayish-cyan);
-    position: absolute;
-    right : 8px;
-    bottom : 2px;
-    font-size : 1.1rem;
-}
 
 .attribution { 
     font-size: 12px; 
