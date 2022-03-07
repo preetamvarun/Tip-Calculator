@@ -12,9 +12,12 @@ let tip = 0, people, bill;
 
 let solve = () => {
 
-    if(!isNaN(billAmount.value) && !isNaN(noOfPeople.value) && (tip !== 0)){
+    if(!isNaN(billAmount.value) && !isNaN(noOfPeople.value)){
         bill = Number(billAmount.value);        
         people = Number(noOfPeople.value); 
+        console.log(`Bill Amount : ${bill}`);
+        console.log(`Tip : ${tip}`);
+        console.log(`People : ${people}`);
     }
 
 }
@@ -52,30 +55,35 @@ let x = (value) => {
 five.addEventListener('click',() =>{
     five.classList.toggle('clickClass');
     x("5");
+    if(!five.classList.contains('clickClass')) tip = 0;
     solve();
 });
 
 ten.addEventListener('click',() => {
     ten.classList.toggle('clickClass');
     x("10");
+    if(!ten.classList.contains('clickClass')) tip = 0;
     solve();
 });
 
 fifteen.addEventListener('click',() => {
     fifteen.classList.toggle('clickClass');
     x("15");
+    if(!fifteen.classList.contains('clickClass')) tip = 0;
     solve();
 });
 
 twentyFive.addEventListener('click',() => {
     twentyFive.classList.toggle('clickClass');
     x("25");
+    if(!twentyFive.classList.contains('clickClass')) tip = 0;
     solve();
 });
 
 fifty.addEventListener('click',() => {
     fifty.classList.toggle('clickClass');
     x("50");
+    if(!fifty.classList.contains('clickClass')) tip = 0;
     solve();
 });
 
