@@ -52,7 +52,6 @@ body{
 
 .left-div{
     position: relative;
-    height : 250px;
 }
 
 .tip-percentage{
@@ -278,6 +277,15 @@ body{
     }
     .splitter{
         top : 0%;
+        padding : 0rem;
+    }
+}
+
+
+@media only screen and (max-device-width: 950px) and (orientation: landscape) {
+    .splitter{
+        top : 0%;
+        padding : 0rem;
     }
 }
 
