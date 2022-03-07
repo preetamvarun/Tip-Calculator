@@ -84,6 +84,11 @@ body{
     color : #191919;
 }
 
+.percentages span.clickClass{
+    background-color: var(--strong-cyan);
+    color : #191919;
+}
+
 .percentages input{
     padding : 0.4rem 0rem;
     width : 100%;
