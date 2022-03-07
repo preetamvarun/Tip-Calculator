@@ -265,7 +265,7 @@ body{
 
 
 
-@media (min-width : 375px) and (max-width : 500px){
+@media (max-width : 500px){
     .main-box{
         width : 100%;
         display: flex;
