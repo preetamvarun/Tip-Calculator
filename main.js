@@ -22,6 +22,7 @@ let solve = () => {
     if(!isNaN(billAmount.value) && !isNaN(noOfPeople.value)){
         bill = Number(billAmount.value);        
         people = Number(noOfPeople.value); 
+
         if(people >= 1 && tip != undefined){
 
             if(err.classList.contains("err")){

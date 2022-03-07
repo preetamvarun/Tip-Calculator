@@ -31,7 +31,7 @@ body{
     padding : 1rem;
     position: absolute;
     width : 100vw;
-    top : 12%;
+    top : 10%;
     color : var(--dark-grayish-cyan);
     font-weight: var(--font-weight);
     letter-spacing: 8px;
@@ -100,6 +100,7 @@ body{
     outline: none;
     border : 0px solid;
     background-color: var(--very-light-grayish-cyan);
+    text-align: right;
 }
 
 .percentages input::placeholder{
@@ -194,7 +195,7 @@ body{
     border-radius : 8px;
     font-weight: 700;
     z-index: 1;
-    height : 250px;
+    height : 270px;
 }
 
 .right-1-div,.right-2-div{
