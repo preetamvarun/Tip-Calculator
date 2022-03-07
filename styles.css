@@ -41,6 +41,7 @@ body{
     grid-template-columns: 1.75fr 1.5fr;
     grid-gap: 1.5rem;
     position: absolute;
+    z-index: 1;
     top : 50%;
     left : 50%;
     transform: translate(-50%,-45%);
@@ -111,6 +112,20 @@ body{
     position: relative;
 }
 
+#people span{
+    position: absolute;
+    right: 10px;
+    top : 3px;
+    font-size : .7rem;
+    color : red;
+    font-weight: 700;
+    opacity: 0;
+}
+
+#people span.err{
+    opacity: 1;
+}
+
 #people label, #bill label{
     display: block;
     color : var(--dark-grayish-cyan);
@@ -125,6 +140,10 @@ body{
     padding : .5rem;
     position: relative;
     border : 0px solid;   
+    text-align: right;
+    caret-color: var(--strong-cyan);
+    color : var(--very-dark-cyan);
+    font-size: 1rem;
 }
 
 #billIcon:hover,#peopleIcon:hover{
@@ -170,11 +189,11 @@ body{
     position: relative;
     border-radius : 8px;
     font-weight: 700;
+    overflow: hidden;
 }
 
 .right-1-div,.right-2-div{
     width : 85%;
-    padding : .4rem .2rem;
     position: absolute;
     transform: translateX(-50%);
     left : 50%;
@@ -183,6 +202,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .right-div a{

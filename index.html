@@ -42,6 +42,7 @@
   
       <div class = "NoOfpeople" id = "people">
         <label for="">Number of People</label>
+        <span>Can't be Zero</span>
         <input type="text" class="icon" placeholder="0" id = "peopleIcon">
       </div>
 
@@ -54,7 +55,7 @@
           <div class="SubR1">Tip Amount</div>
           <div class="subr1">/person</div>
         </div>
-        <div class="price">$0.00</div>
+        <div class="price" id = "tipAmount"><span>$0.00</span></div>
       </div>
 
       <div class="right-2-div">
@@ -62,7 +63,7 @@
           <div class="SubR2">Total</div>
           <div class="subr2">/person</div>
         </div>
-        <div class="price">$0.00</div>
+        <div class="price" id = "total"><span>$0.00</span></div>
       </div>
 
       <a href="#" id = "reset-btn">RESET</a>
