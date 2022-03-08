@@ -21,7 +21,6 @@ let solve = () => {
 
     if(!isNaN(billAmount.value) && !isNaN(noOfPeople.value)){
         
-        // Set total bill and no.of people to local storage
         localStorage.setItem("totalBill", billAmount.value);
         localStorage.setItem("noOfPeople", noOfPeople.value);
 
@@ -60,8 +59,8 @@ customPercentage.addEventListener('keyup',() => {
     num.forEach((n) => {
         if(n.classList.contains("clickClass")) n.classList.remove("clickClass");
     });
-    // set tip value to local storage
-    localStorage.setItem("tip", customPercentage.value);
+    localStorage.setItem("tip","0");
+    localStorage.setItem("custom-tip", customPercentage.value);
     tip = Number(customPercentage.value);
     solve();
 });
@@ -71,6 +70,7 @@ let x = (value) => {
     customPercentage.value = "";
 
     localStorage.setItem("tip",value);
+    localStorage.setItem("custom-tip","0");
 
     tip = Number(value);
 
@@ -138,7 +138,12 @@ fifty.addEventListener('click',() => {
 });
 
 resetBtn.addEventListener('click', ()=>{
-    tip = 0.00;
+    localStorage.setItem("tip",""); // 5 10 15 25 50
+    localStorage.setItem("custom-tip",""); // custom tip percentage
+    localStorage.setItem("tipAmount", "0.00"); // tip Amount
+    localStorage.setItem("total","0.00"); // tip + bill
+    localStorage.setItem("totalBill",""); // bill
+    localStorage.setItem("noOfPeople",""); // noOfPeople
     billAmount.value = "";
     noOfPeople.value = "";
     customPercentage.value = "";
@@ -147,39 +152,43 @@ resetBtn.addEventListener('click', ()=>{
     num.forEach((n) => {
         if(n.classList.contains("clickClass")) n.classList.remove("clickClass");
     });
-    if(err.classList.contains("err")){
-        err.classList.remove("err");
-    }
+    if(err.classList.contains("err")) err.classList.remove("err");
     noOfPeople.style.border = '0px';
 });
 
 let populateUI = () => {
 
-    if(localStorage.getItem("tipAmount") !== null){
-        tA.innerHTML = `<span>$${JSON.parse(localStorage.getItem("tipAmount"))}</span>`;
+    tA.innerHTML = localStorage.getItem("tipAmount") !== null ? 
+    `<span>$${localStorage.getItem("tipAmount")}</span>` : `<span>$0.00</span>`;
+
+    totalAmount.innerHTML = localStorage.getItem("total") !== null ? 
+    `<span>$${localStorage.getItem("total")}</span>` : 
+    totalAmount.innerHTML = `<span>$0.00</span>`
+
+    billAmount.value = localStorage.getItem("totalBill") != null ? 
+    localStorage.getItem("totalBill") : "";
+
+    noOfPeople.value = localStorage.getItem("noOfPeople") != null ? 
+    localStorage.getItem("noOfPeople") : "";
+
+
+    if(localStorage.getItem("custom-tip") != null){
+        if(localStorage.getItem("tip") === null || localStorage.getItem("tip") === "0"){
+            customPercentage.value = localStorage.getItem("custom-tip");
+        }
     } else{
-        tA.innerHTML = `<span>$0.00</span>`;
+        customPercentage.value = "";
     }
 
-    if(localStorage.getItem("total") !== null){
-        totalAmount.innerHTML = `<span>$${JSON.parse(localStorage.getItem("total"))}</span>`;
-    } else{
-        totalAmount.innerHTML = `<span>$0.00</span>`;
+    if(localStorage.getItem("tip") !== null){
+        if(localStorage.getItem("custom-tip") === null || localStorage.getItem("custom-tip") === "0"){
+            num.forEach((n) => {
+                if(localStorage.getItem("tip") === n.textContent.slice(0,-1)){
+                    n.classList.add("clickClass");
+                }
+            });
+        }
     }
-
-    if(localStorage.getItem("totalBill") != null){
-        billAmount.value = localStorage.getItem("totalBill");
-    } else{
-        billAmount.value = "";
-    }
-
-    if(localStorage.getItem("noOfPeople") != null){
-        noOfPeople.value = localStorage.getItem("noOfPeople");
-    } else{
-        noOfPeople.value = "";
-    }
-
-
 }
 
 document.addEventListener('DOMContentLoaded', populateUI);
