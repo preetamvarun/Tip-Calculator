@@ -28,6 +28,7 @@ let solve = () => {
         bill = Number(localStorage.getItem("totalBill"));
 
         if(people >= 1 && tip != undefined){
+
             if(err.classList.contains("err")){
                 err.classList.remove("err");
             }
@@ -42,6 +43,14 @@ let solve = () => {
             tA.innerHTML = `<span>$${tipAmount}</span>` 
             totalAmount.innerHTML = `<span>$${total}</span>`;
         }
+
+        else if(people >= 1 && tip === undefined){
+            if(err.classList.contains("err")){
+                err.classList.remove("err");
+            }
+            noOfPeople.style.border = '0px';
+        }
+        
         else{
             err.classList.add("err");
             noOfPeople.style.border = '1px solid red';
