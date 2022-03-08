@@ -49,8 +49,6 @@ let solve = () => {
         else{
             err.classList.add("err");
             noOfPeople.style.border = '1px solid red';
-            tA.innerHTML = `<span>$0.00</span>` 
-            totalAmount.innerHTML = `<span>$0.00</span>`;
         }
     }
 
@@ -193,6 +191,8 @@ let populateUI = () => {
             });
         }
     }
+
+    /* CHECK FOR ERRORS WHILE RELOADING */
 }
 
 document.addEventListener('DOMContentLoaded', populateUI);
