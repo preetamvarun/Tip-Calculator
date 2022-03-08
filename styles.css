@@ -196,6 +196,7 @@ body{
     font-weight: 700;
     z-index: 1;
     height : 270px;
+    overflow: auto;
 }
 
 .right-1-div,.right-2-div{
