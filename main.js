@@ -26,6 +26,12 @@ let solve = () => {
 
         people = Number(localStorage.getItem("noOfPeople"));
         bill = Number(localStorage.getItem("totalBill"));
+        tip = Number(localStorage.getItem("tip"));
+
+        if(tip === 0){
+            tip = Number(localStorage.getItem("custom-tip"));
+        }
+
 
         if(people >= 1){
 
@@ -37,9 +43,13 @@ let solve = () => {
             if(tip === undefined) tip = 0;
 
             tipAmount = Number(((bill * (tip/100)) / people).toFixed(2));
+            
+            /* PLACE TIP AMOUNT IN LOCAL STORAGE */
             localStorage.setItem("tipAmount",JSON.stringify(tipAmount));
 
             total = Number((bill + tipAmount).toFixed(2));
+
+            /* TOTAL = BILL + TIPAMOUNT  PLACE THIS IN LOCAL STORAGE*/
             localStorage.setItem("total",JSON.stringify(total));
 
             tA.innerHTML = `<span>$${tipAmount}</span>` 
@@ -61,8 +71,13 @@ customPercentage.addEventListener('keyup',() => {
     num.forEach((n) => {
         if(n.classList.contains("clickClass")) n.classList.remove("clickClass");
     });
+    
+    /* SET TIP(SELECTIVE TIPS FROM THE BUTTONS) VALUE TO 0*/
     localStorage.setItem("tip","0");
+
+    /*SET USER ENTERED CUSTOM TIP TO THE LOCAL STORAGE*/
     localStorage.setItem("custom-tip", customPercentage.value);
+
     tip = Number(customPercentage.value);
     solve();
 });
@@ -70,8 +85,9 @@ customPercentage.addEventListener('keyup',() => {
 let x = (value) => {
 
     customPercentage.value = "";
-
     localStorage.setItem("tip",value);
+
+    /* IF THE USER SELECTS ANY OF THE GIVEN TIPS THEN SET THE CUSTOM-TIP TO ZERO*/
     localStorage.setItem("custom-tip","0");
 
     tip = Number(value);
