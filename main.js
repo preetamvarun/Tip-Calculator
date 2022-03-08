@@ -32,7 +32,6 @@ let solve = () => {
             tip = Number(localStorage.getItem("custom-tip"));
         }
 
-
         if(people >= 1){
 
             if(err.classList.contains("err")){
@@ -156,20 +155,29 @@ fifty.addEventListener('click',() => {
 });
 
 resetBtn.addEventListener('click', ()=>{
+
     localStorage.setItem("tip",""); // 5 10 15 25 50
     localStorage.setItem("custom-tip",""); // custom tip percentage
     localStorage.setItem("tipAmount", "0.00"); // tip Amount
     localStorage.setItem("total","0.00"); // tip + bill
     localStorage.setItem("totalBill",""); // bill
     localStorage.setItem("noOfPeople",""); // noOfPeople
+
+    /* EMPTY ALL THE INPUT FIELDS */
     billAmount.value = "";
     noOfPeople.value = "";
     customPercentage.value = "";
+
+    /* MAKE FINAL RESULTS TO ZEROS */
     tA.innerHTML = `<span>$0.00</span>` 
     totalAmount.innerHTML = `<span>$0.00</span>`;
+
+    /* RESET HIGHTLIGHTS FOR PERCENTAGE BUTTONS */
     num.forEach((n) => {
         if(n.classList.contains("clickClass")) n.classList.remove("clickClass");
     });
+
+    /* NO NEED TO DISPLAY ERROR MESSAGES */
     if(err.classList.contains("err")) err.classList.remove("err");
     noOfPeople.style.border = '0px';
 });
@@ -188,6 +196,11 @@ let populateUI = () => {
 
     noOfPeople.value = localStorage.getItem("noOfPeople") != null ? 
     localStorage.getItem("noOfPeople") : "";
+
+    if(noOfPeople.value === "0" || noOfPeople.value === ""){
+        err.classList.add("err");
+        noOfPeople.style.border = "1px solid red";
+    }
 
 
     if(localStorage.getItem("custom-tip") != null){
