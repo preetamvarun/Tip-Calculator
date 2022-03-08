@@ -27,12 +27,14 @@ let solve = () => {
         people = Number(localStorage.getItem("noOfPeople"));
         bill = Number(localStorage.getItem("totalBill"));
 
-        if(people >= 1 && tip != undefined){
+        if(people >= 1){
 
             if(err.classList.contains("err")){
                 err.classList.remove("err");
             }
             noOfPeople.style.border = '0px';
+
+            if(tip === undefined) tip = 0;
 
             tipAmount = Number(((bill * (tip/100)) / people).toFixed(2));
             localStorage.setItem("tipAmount",JSON.stringify(tipAmount));
@@ -44,13 +46,6 @@ let solve = () => {
             totalAmount.innerHTML = `<span>$${total}</span>`;
         }
 
-        else if(people >= 1 && tip === undefined){
-            if(err.classList.contains("err")){
-                err.classList.remove("err");
-            }
-            noOfPeople.style.border = '0px';
-        }
-        
         else{
             err.classList.add("err");
             noOfPeople.style.border = '1px solid red';
