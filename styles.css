@@ -85,8 +85,8 @@ body{
 
 .percentages span:hover{
     cursor: pointer;
-    background-color: var(--strong-cyan);
-    color : #191919;
+    /* background-color: var(--strong-cyan);
+    color : #191919; */
 }
 
 .percentages span.clickClass{
