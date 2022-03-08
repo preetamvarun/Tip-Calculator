@@ -20,17 +20,26 @@ let tip, people, bill, tipAmount, total;
 let solve = () => {
 
     if(!isNaN(billAmount.value) && !isNaN(noOfPeople.value)){
-        bill = Number(billAmount.value);        
-        people = Number(noOfPeople.value); 
+        
+        // Set total bill and no.of people to local storage
+        localStorage.setItem("totalBill", billAmount.value);
+        localStorage.setItem("noOfPeople", noOfPeople.value);
+
+        people = Number(localStorage.getItem("noOfPeople"));
+        bill = Number(localStorage.getItem("totalBill"));
 
         if(people >= 1 && tip != undefined){
-
             if(err.classList.contains("err")){
                 err.classList.remove("err");
             }
             noOfPeople.style.border = '0px';
+
             tipAmount = Number(((bill * (tip/100)) / people).toFixed(2));
-            total = Number(bill + tipAmount).toFixed(2);
+            localStorage.setItem("tipAmount",JSON.stringify(tipAmount));
+
+            total = Number((bill + tipAmount).toFixed(2));
+            localStorage.setItem("total",JSON.stringify(total));
+
             tA.innerHTML = `<span>$${tipAmount}</span>` 
             totalAmount.innerHTML = `<span>$${total}</span>`;
         }
@@ -51,6 +60,8 @@ customPercentage.addEventListener('keyup',() => {
     num.forEach((n) => {
         if(n.classList.contains("clickClass")) n.classList.remove("clickClass");
     });
+    // set tip value to local storage
+    localStorage.setItem("tip", customPercentage.value);
     tip = Number(customPercentage.value);
     solve();
 });
@@ -58,6 +69,8 @@ customPercentage.addEventListener('keyup',() => {
 let x = (value) => {
 
     customPercentage.value = "";
+
+    localStorage.setItem("tip",value);
 
     tip = Number(value);
 
@@ -77,35 +90,50 @@ let x = (value) => {
 five.addEventListener('click',() =>{
     five.classList.toggle('clickClass');
     x("5");
-    if(!five.classList.contains('clickClass')) tip = 0;
+    if(!five.classList.contains('clickClass')){
+        tip = 0;
+        localStorage.setItem("tip","0");
+    }
     solve();
 });
 
 ten.addEventListener('click',() => {
     ten.classList.toggle('clickClass');
     x("10");
-    if(!ten.classList.contains('clickClass')) tip = 0;
+    if(!ten.classList.contains('clickClass')){
+        tip = 0;
+        localStorage.setItem("tip","0");
+    }
     solve();
 });
 
 fifteen.addEventListener('click',() => {
     fifteen.classList.toggle('clickClass');
     x("15");
-    if(!fifteen.classList.contains('clickClass')) tip = 0;
+    if(!fifteen.classList.contains('clickClass')){
+        tip = 0;
+        localStorage.setItem("tip","0");
+    };
     solve();
 });
 
 twentyFive.addEventListener('click',() => {
     twentyFive.classList.toggle('clickClass');
     x("25");
-    if(!twentyFive.classList.contains('clickClass')) tip = 0;
+    if(!twentyFive.classList.contains('clickClass')){
+        tip = 0;
+        localStorage.setItem("tip","0");
+    }
     solve();
 });
 
 fifty.addEventListener('click',() => {
     fifty.classList.toggle('clickClass');
     x("50");
-    if(!fifty.classList.contains('clickClass')) tip = 0;
+    if(!fifty.classList.contains('clickClass')){
+        tip = 0;
+        localStorage.setItem("tip","0");
+    };
     solve();
 });
 
@@ -125,4 +153,33 @@ resetBtn.addEventListener('click', ()=>{
     noOfPeople.style.border = '0px';
 });
 
+let populateUI = () => {
 
+    if(localStorage.getItem("tipAmount") !== null){
+        tA.innerHTML = `<span>$${JSON.parse(localStorage.getItem("tipAmount"))}</span>`;
+    } else{
+        tA.innerHTML = `<span>$0.00</span>`;
+    }
+
+    if(localStorage.getItem("total") !== null){
+        totalAmount.innerHTML = `<span>$${JSON.parse(localStorage.getItem("total"))}</span>`;
+    } else{
+        totalAmount.innerHTML = `<span>$0.00</span>`;
+    }
+
+    if(localStorage.getItem("totalBill") != null){
+        billAmount.value = localStorage.getItem("totalBill");
+    } else{
+        billAmount.value = "";
+    }
+
+    if(localStorage.getItem("noOfPeople") != null){
+        noOfPeople.value = localStorage.getItem("noOfPeople");
+    } else{
+        noOfPeople.value = "";
+    }
+
+
+}
+
+document.addEventListener('DOMContentLoaded', populateUI);
