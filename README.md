@@ -5,6 +5,7 @@ This is a front end mentor challenge
 <img src = "images/Screenshot (256).png" alt = "taskCalciImage" height = 300 width = 600>
 <img src = "images/Screenshot (257).png" alt = "taskCalciImage" height = 300 width = 600>
 <img src = "images/Screenshot (258).png" alt = "taskCalciImage" height = 300 width = 600>
+<img src = "images/Screenshot (260).png" alt = "taskCalciImage" height = 300 width = 600>
 <img src = "images/Screenshot (259).png" alt = "taskCalciImage" height = 300 width = 600>
 
 ## Technologies used 
