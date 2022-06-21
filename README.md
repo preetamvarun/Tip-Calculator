@@ -3,7 +3,9 @@ This is a front end mentor challenge
 
 ## Screenshots 📸
 <img src = "images/Screenshot (256).png" alt = "taskCalciImage" height = 300 width = 600>
-<img src = "images/b.png" alt = "taskListImage" height = 300 width = 600>
+<img src = "images/Screenshot (257).png" alt = "taskCalciImage" height = 300 width = 600>
+<img src = "images/Screenshot (258).png" alt = "taskCalciImage" height = 300 width = 600>
+<img src = "images/Screenshot (259).png" alt = "taskCalciImage" height = 300 width = 600>
 
 ## Technologies used 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
