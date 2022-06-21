@@ -2,7 +2,7 @@
 This is a front end mentor challenge
 
 ## Screenshots 📸
-<img src = "images/Screeshot (256).png" alt = "taskListImage" height = 300 width = 600>
+<img src = "images/Screenshot (256).png" alt = "taskCalciImage" height = 300 width = 600>
 <img src = "images/b.png" alt = "taskListImage" height = 300 width = 600>
 
 ## Technologies used 
